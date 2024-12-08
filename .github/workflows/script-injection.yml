@@ -13,10 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign label
+        env:
+          TITLE: ${{ github.event.issue.title }}
+        # run: |
+        #   issue_title="${{ github.event.issue.title }}"
         run: |
-          issue_title="${{ github.event.issue.title }}"
-          if [[ "$issue_title" == *"bug"* ]]; then
+          if [[ "$TITLE" == *"bug"* ]]; then
           echo "Issue is about a bug!"
           else
           echo "Issue is not about a bug"
           fi
+        
+      # if youe issuwes title like this, a";echo Get your Secrets"
+      # title may only of "a" -- ";" next line , echo -- print.
+      # If you type a";echo $AWS_ACCESS_KEY" -- It will really print your aws cred.
+      # Which is bot prederable.
+      # To avoid that bad event,, store your cred as env.
+
