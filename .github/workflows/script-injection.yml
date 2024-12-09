@@ -30,3 +30,5 @@ jobs:
       # Which is bot prederable.
       # To avoid that bad event,, store your cred as env.
 
+# 2nd Way
+# use your run: | code in your custom actions repo and call workflow bt workflow_call.
