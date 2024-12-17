@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign label
-        env:
-          TITLE: ${{ github.event.issue.title }}
+        # env:
+        #   TITLE: ${{ github.event.issue.title }}
         # run: |
         #   issue_title="${{ github.event.issue.title }}"
         run: |
